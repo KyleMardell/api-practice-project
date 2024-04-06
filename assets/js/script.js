@@ -1,7 +1,7 @@
 // Pokemon search
 
 const findPokemon = () => { 
-    const pokemonName = document.getElementById("pokemon-name").value;
+    const pokemonName = document.getElementById("pokemon-name").value.toLowerCase();
     const url = `https://pokeapi.co/api/v2/pokemon/${pokemonName}`;
     fetch(url)
         .then(response => {
