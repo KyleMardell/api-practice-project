@@ -1,7 +1,8 @@
 // Pokemon search
 
 const findPokemon = () => { 
-    const url = `https://pokeapi.co/api/v2/pokemon/1`;
+    const pokemonName = document.getElementById("pokemon-name").value;
+    const url = `https://pokeapi.co/api/v2/pokemon/${pokemonName}`;
     fetch(url)
         .then(response => {
             if(!response.ok){
@@ -16,6 +17,7 @@ const findPokemon = () => {
             name: data.name,
             id: data.id,
             image: data.sprites.front_default,
+            type: data.types.map(type => type.type.name).join(", ")
         };
     
         console.log(pokemon);
@@ -23,4 +25,4 @@ const findPokemon = () => {
     .catch((error) => console.log(error));
 };
 
-findPokemon();
+document.getElementById("search-btn").addEventListener("click", findPokemon);
