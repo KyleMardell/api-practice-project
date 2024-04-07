@@ -1,6 +1,8 @@
-// Get a question from the api
+/**
+ * Get a new question from the api
+ */
 const getQuestion = () => {
-    const url = `https://opentdb.com/api.php?amount=1&type=multiple`;
+    const url = `https://opentdb.com/api.php?amount=1&category=9&difficulty=easy&type=multiple`;
 
     // Use fetch to get question from open trivia database
     fetch(url)
@@ -25,6 +27,11 @@ const getQuestion = () => {
         });
 };
 
+
+/**
+ * Get the answers to the question and put them in a randome order
+ * then display them in the quiz html 
+ */
 const displayQuestion = (data) => {
     const answers = [
         data.results[0].correct_answer,
@@ -42,6 +49,10 @@ const displayQuestion = (data) => {
     document.getElementById("answer4").innerText = answers[3];
 };
 
+/**
+ * Check if an answer button has been clicked
+ * and check if the answer is correct
+ */
 const checkAnswer = (data) => {
     let correctAnswer = data.results[0].correct_answer;
     let answerButtons = document.getElementsByTagName("button");
@@ -62,9 +73,11 @@ const checkAnswer = (data) => {
         }
     }
 
+    // Loop though the answer buttons, apply the buttonClicked function to each one
     for(let button of answerButtons){
         button.addEventListener("click", buttonClicked);
     }
 };
 
+// Get a new question once the dom has been loaded
 document.addEventListener("DOMContentLoaded", getQuestion);
