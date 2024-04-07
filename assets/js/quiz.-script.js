@@ -16,6 +16,7 @@ const getQuestion = () => {
         .then(data => {
             console.log(data);
             displayQuestion(data);
+            checkAnswer(data);
         })
         // Alert the user of the error and log to console
         .catch(error => {
@@ -30,6 +31,20 @@ const displayQuestion = (data) => {
     document.getElementById("answer2").innerText = data.results[0].incorrect_answers[0];
     document.getElementById("answer3").innerText = data.results[0].incorrect_answers[1];
     document.getElementById("answer4").innerText = data.results[0].incorrect_answers[2];
-}
+};
+
+const checkAnswer = (data) => {
+    let correctAnswer = data.results[0].correct_answer;
+    let answerButtons = document.getElementsByTagName("button");
+    for (let button of answerButtons) {
+        button.addEventListener("click", function () {
+            if (button.innerText === correctAnswer) {
+                alert("That is correct!");
+            } else {
+                alert("Sorry, that is incorrect");
+            }
+        })
+    }
+};
 
 document.addEventListener("DOMContentLoaded", getQuestion);
