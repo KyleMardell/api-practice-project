@@ -60,4 +60,4 @@ document.getElementById("pokemon-name").addEventListener("keydown", function(eve
     if (event.key === "Enter") {
         findPokemon();
     }
-})
+});
