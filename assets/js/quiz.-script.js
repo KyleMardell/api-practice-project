@@ -1,4 +1,4 @@
-
+// Get a question from the api
 const getQuestion = () => {
     const url = `https://opentdb.com/api.php?amount=1`;
 
@@ -23,4 +23,4 @@ const getQuestion = () => {
         });
 };
 
-getQuestion();
+document.addEventListener("DOMContentLoaded", getQuestion);
