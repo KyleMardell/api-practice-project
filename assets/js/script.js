@@ -54,5 +54,10 @@ const displayPokemon = (pokemon) => {
     document.getElementById("pokemon-image").innerHTML = imageHTML;
 }
 
-// Button event listener, calling findPokemon method
+// Event listeners, calling findPokemon method
 document.getElementById("search-btn").addEventListener("click", findPokemon);
+document.getElementById("pokemon-name").addEventListener("keydown", function(event) {
+    if (event.key === "Enter") {
+        findPokemon();
+    }
+})
