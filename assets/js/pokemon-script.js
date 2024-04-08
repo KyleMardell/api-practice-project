@@ -13,15 +13,18 @@ function createPokemon(data) {
 async function getPokemon(url, name) {
     try {
         const response = await fetch(url);
-        if(!response.ok || name === ""){
-            throw "this is an error";
+        if(!response.ok){
+            throw "Not a valid Pokemon";
+        }
+        if (name === ""){
+            throw "Input box is empty";
         }
         const data = await response.json();
         console.log(data);
         createPokemon(data);
     } catch (error) {
         console.error(error);
-        alert("Error");
+        alert(error);
     }
 }
 
