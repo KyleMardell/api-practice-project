@@ -2,7 +2,7 @@
  * Get a new question from the api
  */
 const getQuestion = () => {
-    const url = `https://opentdb.com/api.php?amount=1&category=9&difficulty=easy&type=multiple`;
+    const url = `https://opentdb.com/api.php?amount=10&category=9&difficulty=easy&type=multiple`;
 
     // Use fetch to get question from open trivia database
     fetch(url)

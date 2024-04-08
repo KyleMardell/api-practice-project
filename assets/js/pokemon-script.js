@@ -1,4 +1,37 @@
+function createPokemon(data) {
+    const pokemon = {
+        name: data.name,
+        id: data.id,
+        image: data.sprites.front_default,
+        type: data.types.map(type => type.type.name).join(", "),
+        weight: data.weight / 10,
+        height: data.height / 10
+    };
+    displayPokemon(pokemon);
+}
 
+async function getPokemon(url, name) {
+    try {
+        const response = await fetch(url);
+        if(!response.ok || name === ""){
+            throw "this is an error";
+        }
+        const data = await response.json();
+        console.log(data);
+        createPokemon(data);
+    } catch (error) {
+        console.error(error);
+        alert("Error");
+    }
+}
+
+function finder() {
+    const pokemonName = document.getElementById("pokemon-name").value.toLowerCase();
+    const url = `https://pokeapi.co/api/v2/pokemon/${pokemonName}`;
+    getPokemon(url, pokemonName);
+}
+
+/*
 // Pokemon search
 const findPokemon = () => {
 
@@ -27,6 +60,8 @@ const findPokemon = () => {
             };
             // Call display function to show pokemon on html page
             displayPokemon(pokemon);
+            console.log(data);
+
         })
         // Alert the user of the error and log to console
         .catch(error => {
@@ -34,6 +69,7 @@ const findPokemon = () => {
             console.log(error);
         });
 };
+*/
 
 // Display pokemon
 const displayPokemon = (pokemon) => {
@@ -55,9 +91,9 @@ const displayPokemon = (pokemon) => {
 }
 
 // Event listeners, calling findPokemon method
-document.getElementById("search-btn").addEventListener("click", findPokemon);
+document.getElementById("search-btn").addEventListener("click", finder);
 document.getElementById("pokemon-name").addEventListener("keydown", function (event) {
     if (event.key === "Enter") {
-        findPokemon();
+        finder();
     }
 });

@@ -23,8 +23,9 @@ const getAllCharacters = () => {
         });
 };
 
-getAllCharacters();
-
+/**
+ * Creates a list of all characters in html 
+ */
 const displayCharacterList = (data) => {
     const characterList = document.getElementById("character-list");
     let characterHTML = "";
@@ -38,3 +39,5 @@ const displayCharacterList = (data) => {
     }
     characterList.innerHTML = characterHTML;
 };
+
+getAllCharacters();
