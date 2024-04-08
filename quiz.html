@@ -14,12 +14,40 @@
         <a href="index.html">Home</a>
     </header>
     <main>
-        <h1>Quiz</h1>
-        <h2 id="question"></h2>
-        <button id="answer1"></button>
-        <button id="answer2"></button>
-        <button id="answer3"></button>
-        <button id="answer4"></button>
+        <section>
+            <label for="questions-amount">How many questions do you want? (1-10)</label>
+            <input type="number" id="questions-amount" min="1" max="10" placeholder="5">
+            <fieldset id="difficulty">
+                <legend>Choose Difficulty</legend>
+                <label for="dif-easy">Easy</label>
+                <input type="checkbox" id="dif-easy" checked>
+                <label for="dif-med">Medium</label>
+                <input type="checkbox" id="dif-med">
+                <label for="dif-hard">Hard</label>
+                <input type="checkbox" id="dif-hard">
+            </fieldset>
+            <fieldset id="category">
+                <legend>Choose Category</legend>
+                <label for="cat-any">Any</label>
+                <input type="checkbox" id="cat-any" checked>
+                <label for="cat-gen">General Knowledge</label>
+                <input type="checkbox" id="cat-gen">
+                <label for="cat-film">Film</label>
+                <input type="checkbox" id="cat-film">
+                <label for="cat-music">Music</label>
+                <input type="checkbox" id="cat-music">
+                <label for="cat-sport">Sport</label>
+                <input type="checkbox" id="cat-sport">
+            </fieldset>
+        </section>
+        <section>
+            <h1>Quiz</h1>
+            <h2 id="question"></h2>
+            <button id="answer1"></button>
+            <button id="answer2"></button>
+            <button id="answer3"></button>
+            <button id="answer4"></button>
+        </section>
     </main>
     <!-- Script -->
     <script src="assets/js/quiz.-script.js"></script>
