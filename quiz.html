@@ -20,33 +20,34 @@
             <fieldset id="difficulty">
                 <legend>Choose Difficulty</legend>
                 <label for="dif-easy">Easy</label>
-                <input type="checkbox" id="dif-easy" checked>
+                <input type="radio" id="dif-easy" name="difficulty" checked>
                 <label for="dif-med">Medium</label>
-                <input type="checkbox" id="dif-med">
+                <input type="radio" id="dif-med" name="difficulty">
                 <label for="dif-hard">Hard</label>
-                <input type="checkbox" id="dif-hard">
+                <input type="radio" id="dif-hard" name="difficulty">
             </fieldset>
             <fieldset id="category">
                 <legend>Choose Category</legend>
                 <label for="cat-any">Any</label>
-                <input type="checkbox" id="cat-any" checked>
+                <input type="radio" id="cat-any" name="category" checked>
                 <label for="cat-gen">General Knowledge</label>
-                <input type="checkbox" id="cat-gen">
+                <input type="radio" id="cat-gen" name="category">
                 <label for="cat-film">Film</label>
-                <input type="checkbox" id="cat-film">
+                <input type="radio" id="cat-film" name="category">
                 <label for="cat-music">Music</label>
-                <input type="checkbox" id="cat-music">
+                <input type="radio" id="cat-music" name="category">
                 <label for="cat-sport">Sport</label>
-                <input type="checkbox" id="cat-sport">
+                <input type="radio" id="cat-sport" name="category">
             </fieldset>
+            <button type="submit" id="questions-btn">Get questions</button>
         </section>
         <section>
             <h1>Quiz</h1>
             <h2 id="question"></h2>
-            <button id="answer1"></button>
-            <button id="answer2"></button>
-            <button id="answer3"></button>
-            <button id="answer4"></button>
+            <button id="answer1" class="answer-btn"></button>
+            <button id="answer2" class="answer-btn"></button>
+            <button id="answer3" class="answer-btn"></button>
+            <button id="answer4" class="answer-btn"></button>
         </section>
     </main>
     <!-- Script -->

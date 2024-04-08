@@ -1,3 +1,27 @@
+async function fetchQuestions(url) {
+    try {
+        const response = await fetch(url);
+        if(!response.ok){
+            throw "Error";
+        }
+
+        const data = await response.json();
+        console.log(data);
+    } catch (error) {
+        console.log(error);
+    }
+}
+
+function getUserQuestions() {
+    const chosenQuestionAmount = document.getElementById("questions-amount");
+    
+}
+
+
+
+
+
+
 /**
  * Get a new question from the api
  */
@@ -55,7 +79,7 @@ const displayQuestion = (data) => {
  */
 const checkAnswer = (data) => {
     let correctAnswer = data.results[0].correct_answer;
-    let answerButtons = document.getElementsByTagName("button");
+    let answerButtons = document.getElementsByClassName("answer-btn");
     let questionAnswered = false;
 
     function buttonClicked(event) {
