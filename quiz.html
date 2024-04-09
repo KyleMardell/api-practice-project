@@ -15,31 +15,33 @@
     </header>
     <main>
         <section>
-            <label for="questions-amount">How many questions do you want? (1-10)</label>
-            <input type="number" id="questions-amount" min="1" max="10" placeholder="5">
-            <fieldset id="difficulty">
-                <legend>Choose Difficulty</legend>
-                <label for="dif-easy">Easy</label>
-                <input type="radio" id="dif-easy" name="difficulty" checked>
-                <label for="dif-med">Medium</label>
-                <input type="radio" id="dif-med" name="difficulty">
-                <label for="dif-hard">Hard</label>
-                <input type="radio" id="dif-hard" name="difficulty">
-            </fieldset>
-            <fieldset id="category">
-                <legend>Choose Category</legend>
-                <label for="cat-any">Any</label>
-                <input type="radio" id="cat-any" name="category" checked>
-                <label for="cat-gen">General Knowledge</label>
-                <input type="radio" id="cat-gen" name="category">
-                <label for="cat-film">Film</label>
-                <input type="radio" id="cat-film" name="category">
-                <label for="cat-music">Music</label>
-                <input type="radio" id="cat-music" name="category">
-                <label for="cat-sport">Sport</label>
-                <input type="radio" id="cat-sport" name="category">
-            </fieldset>
-            <button type="submit" id="questions-btn">Get questions</button>
+            <form id="quiz-form">
+                <label for="questions-amount">How many questions do you want? (1-10)</label>
+                <input type="number" id="questions-amount" min="1" max="10" value="5">
+                <fieldset id="difficulty">
+                    <legend>Choose Difficulty</legend>
+                    <label for="dif-easy">Easy</label>
+                    <input type="radio" id="dif-easy" name="difficulty" checked>
+                    <label for="dif-med">Medium</label>
+                    <input type="radio" id="dif-med" name="difficulty">
+                    <label for="dif-hard">Hard</label>
+                    <input type="radio" id="dif-hard" name="difficulty">
+                </fieldset>
+                <fieldset id="category">
+                    <legend>Choose Category</legend>
+                    <label for="cat-any">Any</label>
+                    <input type="radio" id="cat-any" name="category" checked>
+                    <label for="cat-gen">General Knowledge</label>
+                    <input type="radio" id="cat-gen" name="category">
+                    <label for="cat-film">Film</label>
+                    <input type="radio" id="cat-film" name="category">
+                    <label for="cat-music">Music</label>
+                    <input type="radio" id="cat-music" name="category">
+                    <label for="cat-sport">Sport</label>
+                    <input type="radio" id="cat-sport" name="category">
+                </fieldset>
+                <button type="submit" id="questions-btn">Get questions</button>
+            </form>
         </section>
         <section>
             <h1>Quiz</h1>
